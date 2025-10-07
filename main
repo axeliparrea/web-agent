@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""
+Thin wrapper so you can run: python main indeed | python main linkedin
+Delegates to main.py
+"""
+import sys
+from pathlib import Path
+
+
+def _delegate():
+    root = Path(__file__).parent.resolve()
+    main_py = root / "main.py"
+    if not main_py.exists():
+        print("Error: main.py not found next to this wrapper.")
+        sys.exit(1)
+    # Execute main.py in-process for simplicity
+    import runpy
+    # Preserve argv (script name + args) so argparse in main.py works
+    runpy.run_path(str(main_py), run_name="__main__")
+
+
+if __name__ == "__main__":
+    _delegate()
