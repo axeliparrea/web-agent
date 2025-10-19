@@ -1,0 +1,10 @@
+# Root-level requirements (optional)
+#
+# Cada bot tiene su propio requirements.txt:
+# - Indeed: indeed_bot/requirements.txt
+# - LinkedIn: Auto_job_applier_linkedIn/requirements.txt
+#
+# Este archivo existe solo si quieres instalar todo desde la raíz. No es obligatorio.
+
+-r indeed_bot/requirements.txt
+-r Auto_job_applier_linkedIn/requirements.txt

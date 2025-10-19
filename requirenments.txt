@@ -1,0 +1,4 @@
+camoufox
+dotenv
+requests
+yaml
